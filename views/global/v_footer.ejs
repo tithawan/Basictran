@@ -1,0 +1,195 @@
+<footer class="container-fluid footer gx-0">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-3">
+        <h4>Product</h4>
+        <ul class="">
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+        </ul>
+      </div>
+      <div class="col col-md-3">
+        <h4>About</h4>
+        <ul class="">
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+        </ul>
+      </div>
+      <div class="col col-md-3">
+        <h4>About</h4>
+        <ul class="">
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+        </ul>
+      </div>
+      <div class="col col-md-3">
+        <h4>Support</h4>
+        <ul class="">
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 1</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="row foot">
+      <div class="col col-md-3">
+        <img class="logo" src="/img/logo.png" alt="logo">
+      </div>
+      <div class="col col-md-3">
+        <p class="copyright">©2023 DekGym3A International Enterprise TH Limited. All Rights Reserved.</p>
+      </div>
+      <div class="col col-md-4 social">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+            <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37,19h-2c-2.14,0-3,0.5-3,2 v3h5l-1,5h-4v15h-5V29h-4v-5h4v-3c0-4,2-7,6-7c2.9,0,4,1,4,1V19z" fill="rgba(255,255,255,1)"></path>
+          </svg>
+        </a>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+            <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z" fill="rgba(255,255,255,1)"></path>
+          </svg>
+        </a>
+        <a href="mailto:sereepap2029@gmail.com">sereepap2029@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+<script type="text/javascript">
+  $('.slick-holder').slick({
+    dots: false,
+    infinite: true,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    responsive: [{
+        breakpoint: 601,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: false,
+        }
+      },      
+    ]
+  });
+
+  $('.slick-hot-deal').slick({
+    dots: false,
+    infinite: true,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+  $('.slick-new-item').slick({
+    dots: false,
+    infinite: true,
+    arrows: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+  // Check for navigator.mediaDevices.getUserMedia and enumerateDevices support
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia && navigator.mediaDevices.enumerateDevices) {
+    // Get the list of available devices
+    navigator.mediaDevices.enumerateDevices()
+        .then(devices => {
+            const cameras = devices.filter(device => device.kind === 'videoinput');
+
+            if (cameras.length > 0) {
+                console.log('Available cameras:');
+                cameras.forEach(camera => {
+                    console.log(`Device name: ${camera.label}, Device ID: ${camera.deviceId}`);
+                });
+
+                // Request access to the camera using getUserMedia
+                const constraints = { video: { deviceId: cameras[0].deviceId } }; // Access the first camera found
+
+                navigator.mediaDevices.getUserMedia(constraints)
+                    .then(stream => {
+                        // Access to the camera is granted, and you can use the stream for video or other purposes
+                        console.log('Camera access granted');
+
+                        // In a real application, you'd likely attach the stream to a video element
+                        // For example:
+                        // const videoElement = document.getElementById('videoElement');
+                        // videoElement.srcObject = stream;
+                    })
+                    .catch(error => {
+                        // User denied access to the camera or an error occurred
+                        console.error('Error accessing camera:', error);
+                    });
+            } else {
+                console.log('No cameras found.');
+            }
+        })
+        .catch(error => {
+            console.error('Error getting media devices:', error);
+        });
+} else {
+    console.log('navigator.mediaDevices.getUserMedia or enumerateDevices not supported on this browser.');
+}
+
+</script>
+
+</html>
