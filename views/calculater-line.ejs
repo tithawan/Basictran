@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/js/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <label>คำนวนเลข</label><br>
+
+        <label>A :</label>
+        <input type="text" name="valueA" id="valueA">
+        <label>B :</label>
+        <input type="text" name="valueB" id="valueB">
+        <button id="push">Sumbit</button>
+        <div id="output"></div><br><br>
+        
+        
+        <label>คำนวนสมการเส้นตรง</label><br>
+        <label>X = :</label>
+        <input type="text" name="valueX" id="valueX">
+        <label>m = :</label>
+        <input type="text" name="valueM" id="valueM">
+        <label>C = :</label>
+        <input type="text" name="valueC" id="valueC">
+        <button id="line">Sumbit</button>
+        <div id="sumLine"></div><br>
+    
+    </body>
+
+   <script>
+        $(document).on("click","#push",function() {
+            calculate1()
+        });
+
+        function calculate1(){
+                let valueA = $("#valueA").val()
+                let valueB = $("#valueB").val()
+                
+                $.ajax({
+                url: "/blog/calnum",
+                method:"POST" ,
+                data:{
+                    dataA:valueA,
+                    dataB:valueB,
+                },
+                })
+                .done(function( data ) {
+                        $("#output").html(data)
+                        //console.log(data)
+                }).fail(function(data) {
+                    alert( data );
+                });
+        };
+
+        $(document).on("click","#line",function() {
+            calculate1Line()
+        });
+
+        function calculate1Line(){
+                let valueX = $("#valueX").val()
+                let valueM = $("#valueM").val()
+                let valueC = $("#valueC").val()
+                
+                $.ajax({
+                url: "/blog/calline",
+                method:"POST" ,
+                data:{
+                    dataX:valueX,
+                    dataM:valueM,
+                    dataC:valueC,
+                },
+                })
+                .done(function( data ) {
+                    let funLine = ""
+                    
+                    for (let x = 0; x < data.length; x++) {
+                        
+                        funLine = funLine+"x = "+x+" y = "+data[x]+"<br>"
+                    }
+
+                    $("#sumLine").html(funLine)
+                    //console.log(data)
+                }).fail(function(data) {
+                    alert( data );
+                });
+        }
+   </script>
+
+</html>

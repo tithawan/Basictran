@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/js/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <label>คำนวนสมการเส้นตรง</label><br>
+        <label>X = :</label>
+        <input type="text" name="valueX" id="valueX">
+        <label>m = :</label>
+        <input type="text" name="valueM" id="valueM">
+        <label>C = :</label>
+        <input type="text" name="valueC" id="valueC">
+        <button id="line">Sumbit</button>
+        <div id="sumLine"></div><br>
+    
+    </body>
+
+   <script>
+      let X = []
+      let M = []
+      let C = []
+      let Y = []
+      let n = 0
+      
+      
+      
+        $(document).on("click","#line",function() {
+            calculate1Line()
+            
+        });
+
+        function calculate1Line(){
+                
+               
+                
+                X[n] = $("#valueX").val()
+                M[n] = $("#valueM").val()
+                C[n] = $("#valueC").val()
+
+                let valueX = X
+                let valueM = M
+                let valueC = C
+                
+                
+                
+                $.ajax({
+                url: "/blog/calline2",
+                method:"POST" ,
+                data:{
+                    dataN:n,
+                    dataX:valueX,
+                    dataM:valueM,
+                    dataC:valueC,
+                    
+                },
+                
+                })
+                .done(function( data ) {
+                    console.log(data)
+                    
+                    let funLine = ""
+                    
+                    
+                    let dataY = data.dataY
+                        Y[n] = dataY
+
+                    console.log(Y) 
+                        
+                    
+                    for (let x = 0; x <= n; x++) {
+
+                        
+                        funLine = funLine+"x = "+X[x]+" y = "+Y[x]+"<br>"
+                    }
+                    n = n+1
+                    $("#sumLine").html(funLine)
+                    //console.log(data)
+                }).fail(function(data) {
+                    alert( data );
+                });
+        }
+   </script>
+
+</html>

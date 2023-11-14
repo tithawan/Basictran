@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/js/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <label>จำนวนชั้นของต้นไม้</label><br>
+        <label>โปรดระบุชั้น</label>
+        <input type="text" name="layerTree" id="layerTree">
+        <button id="push">สร้างต้นไม้</button>
+        <div id="output"></div><br>
+    </body>
+
+   <script>
+
+        $(document).on("click","#push",function() {
+            fun()
+        });
+
+        function fun(){
+                let layer = $("#layerTree").val()
+                $.ajax({
+                url: "/blog/layertree",
+                method:"POST" ,
+                data:{
+                    dataLayer:layer,
+                }
+                })
+                .done(function( mainStar ) {
+                    //let space = ""
+                    let total = ""
+                    let sum = ""
+                
+                    
+                    
+                        for (let i = 0; i < mainStar.length; i++) {                           
+                            space = ""    
+
+                            for (let k = i; k < (mainStar.length)-1; k++) {
+                                space = space+"&nbsp;&nbsp;"
+                               
+                            }
+                            
+                            //console.log(space+mainStar[i])
+                            sum = sum+space+mainStar[i]+"<br>"
+                        }
+                    
+                    console.log(sum)
+                    $("#output").html(sum)
+
+                }).fail(function( mainStar ) {
+                    alert( mainStar );
+                });
+        }
+   </script>
+
+</html>
