@@ -16,7 +16,7 @@ process.env.TZ = process.env.TIME_ZONE;
 // Routes import
 const routeDebug = require("./routes/debug.js");
 const routeHome = require("./routes/home.js");
-const routeblog = require("./routes/blog-ing.js");
+const routeFron = require("./routes/forn.js");
 const app = express();
 //setup views EJS
 app.set("views", path.join(__dirname, "views"));
@@ -69,7 +69,7 @@ app.use(
 );
 
 app.use("/", routeHome);
-app.use("/blog", routeblog);
+app.use("/forn", routeFron);
 
 
 // debug region
